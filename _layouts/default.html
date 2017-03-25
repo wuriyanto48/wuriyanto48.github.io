@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Wuriyanto at Github.io</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/cv">CV</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+  </nav> 
+		<div class="container">
+    		<div class="blurb">
+        		<h1>Hey..., I'm Wuriyanto Musobar!</h1>
+				<p>I am a self taught fucki'n Coder <em></em><a href="/about">Read more about my...</a></p>
+    		</div><!-- /.blurb -->
+        <div class="panel panel-default">
+          <div class="panel-heading">{{ page.title_header }}</div>
+          <div class="panel-body">{{ content }}</div>
+          <div class="panel-footer">
+            <a type="button" class="btn btn-primary" href="mailto:wuriyanto007@gmail.com">Primary <span class="badge">Mail to Wuriyanto</span></a>
+            <a type="button" class="btn btn-primary" href="https://github.com/wuriyanto48">Primary <span class="badge">github.com/wuriyanto48</span></a>
+          </div>
+        </div>
+		</div><!-- /.container -->
+	</body>
+</html>

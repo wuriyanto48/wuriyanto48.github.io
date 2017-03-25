@@ -1,2 +1,3 @@
 name: Wuriyanto Musobar
 markdown: Break Down
+permalink: /blog/:year/:month/:day/:title

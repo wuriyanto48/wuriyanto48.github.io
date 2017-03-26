@@ -53,6 +53,8 @@ ul.posts li {
 
  .content{
    overflow-y: auto;
+   margin-top: auto;
+   margin-bottom: auto;
  }
 
 /*

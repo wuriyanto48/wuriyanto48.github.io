@@ -7,7 +7,7 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: relative;
+  position: fixed;
   bottom: auto;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -28,6 +28,7 @@ body {
 
 body > .container {
   padding: 60px 15px 0;
+  overflow-y: auto;
 }
 
 .footer > .container {

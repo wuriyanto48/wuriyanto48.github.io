@@ -5,10 +5,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  height: auto;
 }
 .footer {
   position: relative;
-  bottom: 0;
+  bottom: auto;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: auto;

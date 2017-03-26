@@ -51,6 +51,10 @@ ul.posts li {
      -o-transition-duration: 0.5s;
  }
 
+ .content{
+   overflow-y: auto;
+ }
+
 /*
     Multicoloured Hover Variations
 */

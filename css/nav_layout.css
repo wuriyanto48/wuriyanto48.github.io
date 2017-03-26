@@ -9,10 +9,10 @@ body {
 }
 .footer {
   position: relative;
-  bottom: auto;
+  bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: auto;
+  height: 80px;
   line-height: 80px; /* Vertically center the text there */
   background-color: #000000;
 }

@@ -8,8 +8,8 @@ body {
   height: auto;
 }
 .footer {
-  position: sticky;
-  bottom: 0;
+  position: relative;
+  bottom: auto;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: auto;

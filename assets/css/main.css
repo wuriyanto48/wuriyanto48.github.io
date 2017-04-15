@@ -95,7 +95,7 @@ a:after {
 }
 
 .navbar-inverse {
-	background-color: #4dc3ff;
+	background-color: #2f2f2f;
 	border-color: #16a085;
 }
 
@@ -145,6 +145,7 @@ a:after {
 	padding-top: 70px;
 	padding-bottom: 70px;
 	background-color: #2f2f2f;
+  background-image:url(../img/home.jpg);
 }
 
 #ww p {

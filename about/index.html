@@ -3,14 +3,15 @@ layout: default
 title: Wuriyanto Musobar at github.io
 title_header: About Me
 ---
-<div class="row">
-	<div class="col-lg-6">
-		<h4>THE THINKING</h4>
-		<p>
-      Code, Art, Music, and Gaming every day. Fall in love with open source technologies such as Linux, Go or Golang, Java technology, Javascript technology, and Node Js technology. Favorite topics : Functional Programming, Reactive Programming, Microservice,Internet of Things(IOT), others (World War 1-2, Middle East War, Music, Art, Graphic Design, Agriculture, Modern Farming)
-    </p>
-	</div><!-- /colg-lg-6 -->
-</div><!-- /row -->
+<div id="skillswrap">
+	<div class="row">
+		<div class="col-lg-6">
+			<h4>THE THINKING</h4>
+			<p>
+	      Code, Art, Music, and Gaming every day. Fall in love with open source technologies such as Linux, Go or Golang, Java technology, Javascript technology, and Node Js technology. Favorite topics : Functional Programming, Reactive Programming, Microservice,Internet of Things(IOT), others (World War 1-2, Middle East War, Music, Art, Graphic Design, Agriculture, Modern Farming)
+	    </p>
+		</div><!-- /colg-lg-6 -->
+	</div><!-- /row -->
 	<div class="row">
 		<div class="col-lg-2 col-lg-offset-1">
 			<h5>SKILLS</h5>
@@ -124,5 +125,42 @@ title_header: About Me
 					var myDoughnut = new Chart(document.getElementById("vue").getContext("2d")).Doughnut(doughnutData);
 			</script>
 		</div>
+		<div class="col-lg-3 col-lg-offset-3 centered">
+			<canvas id="express" height="130" width="130"></canvas>
+			<p>Express Js</p>
+			<br>
+			<script>
+				var doughnutData = [
+						{
+							value: 80,
+							color:"#1abc9c"
+						},
+						{
+							value : 20,
+							color : "#ecf0f1"
+						}
+					];
+					var myDoughnut = new Chart(document.getElementById("express").getContext("2d")).Doughnut(doughnutData);
+			</script>
+		</div>
+		<div class="col-lg-3 centered">
+			<canvas id="react" height="130" width="130"></canvas>
+			<p>React Js</p>
+			<br>
+			<script>
+				var doughnutData = [
+						{
+							value: 50,
+							color:"#1abc9c"
+						},
+						{
+							value : 50,
+							color : "#ecf0f1"
+						}
+					];
+					var myDoughnut = new Chart(document.getElementById("react").getContext("2d")).Doughnut(doughnutData);
+			</script>
+		</div>
 
-</div><!--/.row -->
+	</div><!--/.row -->
+</div>

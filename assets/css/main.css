@@ -187,9 +187,16 @@ a:after {
 	background-color: #ffffff;
 }
 
+#skillswrap {
+	background: #2c3e50;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	color: white;
+}
 
-
-
+#skillswrap h5{
+	color: white;
+}
 
 /* Blog Date*/
 bd {

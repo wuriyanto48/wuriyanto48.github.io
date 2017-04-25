@@ -257,3 +257,9 @@ bt {
 	font-size: 40px;
 	color: #4dc3ff;
 }
+
+.gallery
+{
+    display: inline-block;
+    margin-top: 20px;
+}

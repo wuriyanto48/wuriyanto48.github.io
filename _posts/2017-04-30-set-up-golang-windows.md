@@ -31,7 +31,7 @@ Proses hampir sama dengan set up  <b>GOROOT</b> di atas. buka <b>Control Panel >
 Pada bagian <b>System Properties</b> pilih <b>New</b><br>
 <img src="/assets/img/posts/2017-04-30-set-up-golang-windows-4.jpg" width="418" height="477"/><br>
 Bisa dilihat pada gambar di atas, saya meletakan folder <b>Workspace</b> di <b>E:\JIMAT\go-project</b>, jadi nanti semua projek <b>Go</b> yang saya buat akan berada disini.<br> 
-Nah... sampai tahap ini kita sudah melakukan dua langkah penting dalam proses set up <b>environment variable</> untuk memulai development di <b>Go</b>.<br>
+Nah... sampai tahap ini kita sudah melakukan dua langkah penting dalam proses set up <b>environment variable</b> untuk memulai development di <b>Go</b>.<br>
 Buka <b>CMD</b><br>
 jalankan perintah<br>
 <b> $ go env </b><br>

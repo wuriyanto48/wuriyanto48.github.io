@@ -48,6 +48,8 @@ Jika tidak ada masalah akan muncul output seperti ini<br>
 <li>Dalam satu <i>Package</i> memiliki satu atau lebih <b>Go Code</b> dalam satu folder, jadi dalam satu folder dalam setiap file <b>.go</b> harus memiliki nama <i>Package</i> yang sama</li>
 <ul>
 
+<p></p>
+
 <h3>Aplikasi Pertama</h3>
 <p>
 Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu: <br>
@@ -84,6 +86,8 @@ Jalankan perintah<br>
 Kalo semua proses instalasi di jalankan dengan benar, maka akan terlihat output:
 <b>Hello, Indonesia.....</b>
 </p>
+
+<p></p>
 
 <h3>Kesimpulan</h3>
 <p>

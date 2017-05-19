@@ -23,7 +23,7 @@ Setelah proses instalasi selesai, jika setting folder untuk instalasi Go default
 <img src="/assets/img/posts/2017-04-30-set-up-golang-windows-2.jpg" width="500" height="250"/><br>
 <b>copy alamat folder C:\Go</b> dan buka <b>Control Panel > System and Security > System > Advance System Settings > Environtment Variables.</b><br>
 Pada bagian <b>System Properties</b> pilih <b>New</b><br>
-<img src="/assets/img/posts/2017-04-30-set-up-golang-windows-3.jpg" width="500" height="300"/><br>
+<img src="/assets/img/posts/2017-04-30-set-up-golang-windows-3.jpg" width="418" height="477"/><br>
 Langkah selanjutnya adalah set up <b>GOPATH</b>, <b>GOPATH</b> environment variable adalah lokasi spesifik untuk folder <b>Workspace</b> kita.<br>
 Secara default biasanya berada di <b>C:\Users\YourName\go</b> di Sistem Operasi <b>Windows</b>
 Jadi semua folder projek <b>Go</b> kita akan berada di satu tempat, mengapa.... nanti bakal saya jelaskan.<br>
@@ -36,9 +36,9 @@ Buka <b>CMD</b><br>
 jalankan perintah<br>
 <b> $ go env </b><br>
 Jika tidak ada masalah akan muncul output seperti ini<br>
+</p>
 <img src="/assets/img/posts/2017-04-30-set-up-golang-windows-5.jpg" width="520" height="276"/><br>
 
-</p>
 
 <h3>Point Penting</h3>
 <ul>
@@ -47,10 +47,9 @@ Jika tidak ada masalah akan muncul output seperti ini<br>
 <li>Setiap repositori memiliki satu atau lebih <i>Package</i></li>
 <li>Dalam satu <i>Package</i> memiliki satu atau lebih <b>Go Code</b> dalam satu folder, jadi dalam satu folder dalam setiap file <b>.go</b> harus memiliki nama <i>Package</i> yang sama</li>
 <ul>
-<p>
 
 <h3>Aplikasi Pertama</h3>
-
+<p>
 Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu: <br>
 </p>
 <ul>

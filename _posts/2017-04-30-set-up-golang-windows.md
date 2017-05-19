@@ -50,7 +50,7 @@ Jika tidak ada masalah akan muncul output seperti ini<br>
 <li>Dalam satu <i>Workspace</i> memiliki banyak repositori yang di kelola oleh <i>Version Control</i> seperti <b>Git</b></li>
 <li>Setiap repositori memiliki satu atau lebih <i>Package</i></li>
 <li>Dalam satu <i>Package</i> memiliki satu atau lebih <b>Go Code</b> dalam satu folder, jadi dalam satu folder dalam setiap file <b>.go</b> harus memiliki nama <i>Package</i> yang sama</li>
-<ul>
+</ul>
 </p>
 
 <hr>

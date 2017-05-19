@@ -16,6 +16,8 @@ Setelah download selesai, langkah berikutnya adalah proses installasi. Proses in
 Tinggal tekan next sampai selesai.
 </p>
 
+<hr>
+
 <h3>Environment variable</h3>
 <p>
 <b>Setting environment variable</b>, pada tahap ini kita akan fokus untuk set up komputer kita supaya bisa di gunakan untuk development Go.<br>
@@ -39,26 +41,31 @@ Jika tidak ada masalah akan muncul output seperti ini<br>
 </p>
 <img src="/assets/img/posts/2017-04-30-set-up-golang-windows-5.jpg" width="520" height="276"/><br>
 
+<hr>
 
 <h3>Point Penting</h3>
+<p>
 <ul>
 <li>Go Programmer biasanya meletakan Code mereka berada dalam satu <i>Workspace</i></li>
 <li>Dalam satu <i>Workspace</i> memiliki banyak repositori yang di kelola oleh <i>Version Control</i> seperti <b>Git</b></li>
 <li>Setiap repositori memiliki satu atau lebih <i>Package</i></li>
 <li>Dalam satu <i>Package</i> memiliki satu atau lebih <b>Go Code</b> dalam satu folder, jadi dalam satu folder dalam setiap file <b>.go</b> harus memiliki nama <i>Package</i> yang sama</li>
 <ul>
+</p>
 
-<br>
+<hr>
 
 <h3>Aplikasi Pertama</h3>
 <p>
-Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu: <br>
+Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu:
 </p>
+<p>
 <ul>
 <li><b>src</b>, di folder inilah semua projek kita berada</li>
 <li><b>pkg</b>, di folder inilah semua <b>Package Objects</b> kita berada</li>
 <li><b>bin</b>, di folder inilah semua <b>binary</b> file atau file <b>.exe</b> kita berada, file tersebut terbentu setelah kita menjalankan <b>$ go build</b> di root projek kita</li>
 <ul>
+</p>
 
 <p>
 Buatlah folder <b>src</b> di folder <b>GOPATH</b> kamu, kalau di tempatku beradi di <b>E:\JIMAT\go-project\src</b>.<br>
@@ -87,7 +94,7 @@ Kalo semua proses instalasi di jalankan dengan benar, maka akan terlihat output:
 <b>Hello, Indonesia.....</b>
 </p>
 
-<br>
+<hr>
 
 <h3>Kesimpulan</h3>
 <p>

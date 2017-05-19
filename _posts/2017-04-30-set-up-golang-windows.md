@@ -55,7 +55,7 @@ Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu: <br>
 <ul>
 <li><b>src</b>, di folder inilah semua projek kita berada</li>
 <li><b>pkg</b>, di folder inilah semua <b>Package Objects</b> kita berada</li>
-<li><b>bin</b>, di folder inilah semua <b>binary</b> file atau file <b>.exe</b> kita berada, file tersebut terbentu setelah kita menjalankan <b>$ go build<b/> di root projek kita</li>
+<li><b>bin</b>, di folder inilah semua <b>binary</b> file atau file <b>.exe</b> kita berada, file tersebut terbentu setelah kita menjalankan <b>$ go build</b> di root projek kita</li>
 <ul>
 
 <p>

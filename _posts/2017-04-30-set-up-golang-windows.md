@@ -47,9 +47,10 @@ Jika tidak ada masalah akan muncul output seperti ini<br>
 <li>Setiap repositori memiliki satu atau lebih <i>Package</i></li>
 <li>Dalam satu <i>Package</i> memiliki satu atau lebih <b>Go Code</b> dalam satu folder, jadi dalam satu folder dalam setiap file <b>.go</b> harus memiliki nama <i>Package</i> yang sama</li>
 <ul>
+<p>
 
 <h3>Aplikasi Pertama</h3>
-<p>
+
 Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu: <br>
 </p>
 <ul>
@@ -61,8 +62,8 @@ Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu: <br>
 <p>
 Buatlah folder <b>src</b> di folder <b>GOPATH</b> kamu, kalau di tempatku beradi di <b>E:\JIMAT\go-project\src</b>.<br>
 Setelah pembuatan folder diatas, buatlah folder lagi di <b>E:\JIMAT\go-project\src</b>, dengan format berikut <b>github.com/username-kamu</b><br>
-Lebih bagus lagi jika kamu sudah memiliki akun <a href="https://github.com/">Github<a/>.<br>
-Pada <b>github.com/username-kamu</b> Ganti <i>username</i> dengan username <a href="https://github.com/">Github<a/> kamu.<br>
+Lebih bagus lagi jika kamu sudah memiliki akun <a href="https://github.com/">Github</a>.<br>
+Pada <b>github.com/username-kamu</b> Ganti <i>username</i> dengan username <a href="https://github.com/">Github</a> kamu.<br>
 Di folder <b>github.com/username-kamu</b> Buat folder lagi dengan nama <b>go-app1</b>, jadi hasilya menjadi seperti ini, kalau di tempat saya: <br>
 <b>E:\JIMAT\go-project\src\github.com\wuriyanto48\go-app1</b>.<br>
 Buat satu file dengan nama <b>main.go</b> di folder <b>go-app1</b>, letakan kode program berikut:

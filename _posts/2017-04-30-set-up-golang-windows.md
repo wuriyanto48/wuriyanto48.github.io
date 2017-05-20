@@ -50,6 +50,7 @@ Jika tidak ada masalah akan muncul output seperti ini<br>
 <li>Dalam satu <i>Workspace</i> memiliki banyak repositori yang di kelola oleh <i>Version Control</i> seperti <b>Git</b></li>
 <li>Setiap repositori memiliki satu atau lebih <i>Package</i></li>
 <li>Dalam satu <i>Package</i> memiliki satu atau lebih <b>Go Code</b> dalam satu folder, jadi dalam satu folder dalam setiap file <b>.go</b> harus memiliki nama <i>Package</i> yang sama</li>
+<li>Buatlah namap <i>Package</i> sesimpel mungkin. Misal <b>db</b>, <b>fmt</b>, <b>crypto</b> dan <b>log</b>. Beberapa contoh nama <i>Package</i> yang diambil dari standar <i>Library Go</i></li>
 </ul>
 </p>
 
@@ -68,7 +69,7 @@ Pada folder <b>Workspace</b> kita nanti akan ada tiga folder, yaitu:
 </p>
 
 <p>
-Buatlah folder <b>src</b> di folder <b>GOPATH</b> kamu, kalau di tempatku beradi di <b>E:\JIMAT\go-project\src</b>.<br>
+Buatlah folder <b>src</b> di folder <b>GOPATH</b> kamu, kalau di tempatku berada di <b>E:\JIMAT\go-project\src</b>.<br>
 Setelah pembuatan folder diatas, buatlah folder lagi di <b>E:\JIMAT\go-project\src</b>, dengan format berikut <b>github.com/username-kamu</b><br>
 Lebih bagus lagi jika kamu sudah memiliki akun <a href="https://github.com/">Github</a>.<br>
 Pada <b>github.com/username-kamu</b> Ganti <i>username</i> dengan username <a href="https://github.com/">Github</a> kamu.<br>
@@ -99,6 +100,8 @@ Kalo semua proses instalasi di jalankan dengan benar, maka akan terlihat output:
 <h3>Kesimpulan</h3>
 <p>
 Nah.... sampai disini, kita sudah berhasil melakukan proses instalasi, <b>setting environment variable</b> dan membuat aplikasi pertama kita. Proses tidak terlalu sulit si kalau menurut saya...<br>
+Pada intinya, (ini pendapat saya) <b>Go</b> memaksa kita untuk selalu disiplin dan konsisten dalam membuat projek, modul ataupun <i>libary</i>. Pasti ada pertanyaan <b>"Mengapa ?"</b>. Hal ini akan kita ketahui sendiri
+setelah kita memulai Development di <b>Go</b>.<br>
 Pada artikel berikutnya mungkin kita akan bahas hal menarik lainya dari <b>Go Programming</b>.<br>
 </p>
 

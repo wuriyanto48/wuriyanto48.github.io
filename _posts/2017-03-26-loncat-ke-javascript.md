@@ -1,12 +1,13 @@
 ---
 layout: post
+comments: true
 title: "Loncat Ke Javascript"
 title_header: Blog
 date: 2017-03-26
 ---
 
 <p>
-Beberapa tahun terakhir Javascript mulai populer, sebelumnya si emang udah populer, cuman agak beda nih. 
+Beberapa tahun terakhir Javascript mulai populer, sebelumnya si emang udah populer, cuman agak beda nih.
 Popularitas Javascript mulai naik sejak munculnya platform karya Ryan Dahl lihat : <a href="https://www.quora.com/Who-is-Ryan-Dahl">Quora</a> . Ryan Dahl adalah original author dari platform yang saat ini begitu populer, entah di Google, Youtube, dan situs-situs seputar teknologi. Node.js adalah platform perangkat lunak pada sisi-server dan aplikasi jaringan. Ditulis dengan bahasa JavaScript dan dijalankan pada Windows, Mac OS X, dan Linux tanpa perubahan kode program. Node.js memiliki pustaka server HTTP sendiri sehingga memungkinkan untuk menjalankan server web tanpa menggunakan program server web seperti Apache atau Lighttpd sumber: <a href="https://id.wikipedia.org/wiki/Node.js">Wikipedia</a>.
 </p>
 <p>

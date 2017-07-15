@@ -7,7 +7,7 @@ title_header: About Me
 	<div class="col-lg-10 col-lg-offset-1">
 		<h5>THE THINKING</h5>
 		<p>
-			Code, Art, Music, and Gaming every day. Fall in love with open source technologies such as Linux, Go or Golang, Java technology, Javascript technology, and Node Js technology. Favorite topics : Functional Programming, Reactive Programming, Microservice,Internet of Things(IOT), others (World War 1-2, Middle East War, Music, Art, Graphic Design, Agriculture, Modern Farming)
+			Code, Art, Music, and Gaming every day. Fall in love with open source technologies such as Linux, Go or Golang, Java technology, Javascript technology, and Node Js technology. Favorite topics : Functional Programming, Reactive Programming, Microservices,Internet of Things(IOT), others (World War 1-2, Middle East War, Music, Art, Graphic Design, Agriculture, Modern Farming)
 		</p>
 	</div><!-- /colg-lg-6 -->
 </div><!-- /row -->
@@ -34,23 +34,24 @@ title_header: About Me
 		</script>
 	</div>
 	<div class="col-lg-3 centered">
-		<canvas id="bootstrap" height="130" width="130"></canvas>
-		<p>Bootstrap</p>
+		<canvas id="golang" height="130" width="130"></canvas>
+		<p>Golang</p>
 		<br>
 		<script>
 			var doughnutData = [
 					{
-						value: 90,
+						value: 80,
 						color:"#1abc9c"
 					},
 					{
-						value : 10,
+						value : 20,
 						color : "#ecf0f1"
 					}
 				];
-				var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
+				var myDoughnut = new Chart(document.getElementById("golang").getContext("2d")).Doughnut(doughnutData);
 		</script>
 	</div>
+
 	<div class="col-lg-3 centered">
 		<canvas id="nodejs" height="130" width="130"></canvas>
 		<p>Node Js</p>
@@ -67,6 +68,25 @@ title_header: About Me
 					}
 				];
 				var myDoughnut = new Chart(document.getElementById("nodejs").getContext("2d")).Doughnut(doughnutData);
+		</script>
+	</div>
+
+	<div class="col-lg-3 centered">
+		<canvas id="java" height="130" width="130"></canvas>
+		<p>Java/JVM</p>
+		<br>
+		<script>
+			var doughnutData = [
+					{
+						value: 90,
+						color:"#1abc9c"
+					},
+					{
+						value : 10,
+						color : "#ecf0f1"
+					}
+				];
+				var myDoughnut = new Chart(document.getElementById("java").getContext("2d")).Doughnut(doughnutData);
 		</script>
 	</div>
 
@@ -158,6 +178,24 @@ title_header: About Me
 					}
 				];
 				var myDoughnut = new Chart(document.getElementById("react").getContext("2d")).Doughnut(doughnutData);
+		</script>
+	</div>
+	<div class="col-lg-3 centered">
+		<canvas id="bootstrap" height="130" width="130"></canvas>
+		<p>Bootstrap</p>
+		<br>
+		<script>
+			var doughnutData = [
+					{
+						value: 90,
+						color:"#1abc9c"
+					},
+					{
+						value : 10,
+						color : "#ecf0f1"
+					}
+				];
+				var myDoughnut = new Chart(document.getElementById("bootstrap").getContext("2d")).Doughnut(doughnutData);
 		</script>
 	</div>
 

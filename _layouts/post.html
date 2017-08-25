@@ -2,8 +2,17 @@
 layout: default
 title_header: Blog
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }} | {% if page.comments %} • <a href="http://wuriyanto.com{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}</p>
+<!-- Post Headline Start -->
+<div class="post-title">
+    <h1>{{ page.title }}</h1>
+   </div>
+   <!-- Post Headline End -->
+
+<!-- Post Detail Start -->
+<div class="post-info">
+    <span>{{ page.date | date_to_string }} | {% if page.comments %} • <a href="http://wuriyanto.com{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}</span>
+   </div>
+   <!-- Post Detail End -->
 
 <div class="post">
   {{ content }}

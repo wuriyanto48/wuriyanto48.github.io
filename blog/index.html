@@ -1,0 +1,20 @@
+---
+layout: default
+title: Wuriyanto Musobar
+title_header: My Blog
+---
+
+{% for post in site.posts %}
+<!-- Blog Post Start -->
+<div class="col-md-12 blog-post">
+    <div class="post-title">
+      <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
+    </div>
+    <div class="post-info">
+      <span><bd>{{ post.date | date_to_string }}</bd> / by <a href="#" target="_blank">Wuriyanto</a></span>
+    </div>
+    <p></p>
+    <a href="{{ post.url }}" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+</div>
+<!-- Blog Post End -->
+{% endfor %}

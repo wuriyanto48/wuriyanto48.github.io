@@ -308,7 +308,7 @@ button {
     display: block;
     color: #333333;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -347,15 +347,16 @@ button {
 }
 
 .my-detail h1 {
+    color: #004247;
     font-size: 20px;
     font-weight: 700;
 }
 
 .my-detail span {
-    color: #c1c1c1;
+    color: #026870;
     font-weight: 400;
     line-height: 30px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 

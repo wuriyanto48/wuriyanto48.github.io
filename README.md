@@ -1,4 +1,3 @@
-# wuriyanto48.github.io
-My Github IO page
-
-Feel free to copy my github.io page :D
+# wuriyanto.com
+Source Code for My Website 
+Personal and Blog

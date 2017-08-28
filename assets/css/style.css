@@ -352,6 +352,12 @@ button {
     font-weight: 700;
 }
 
+.my-detail h2 {
+    color: #004247;
+    font-size: 16px;
+    font-weight: 620;
+}
+
 .my-detail span {
     color: #026870;
     font-weight: 400;

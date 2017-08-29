@@ -322,7 +322,16 @@ button {
 
 .about-fixed {
     position: fixed;
-    width: 20.8%;
+}
+
+/* Screen MD */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about-fixed { width: 242px; }
+}
+
+/* Screen LG */
+@media (min-width: 1200px) {
+    .about-fixed { width: 292px; }
 }
 
 .my-pic {
@@ -332,6 +341,7 @@ button {
 
 .my-pic img {
     width: 100%;
+    height: auto;
 }
 
 .my-detail {

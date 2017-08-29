@@ -173,6 +173,7 @@ button {
     transition: all 0.3s;
 }
 
+.thumbnail small.text-muted { min-height: 35px; display: inline-block; }
 
 .button:before {
     font-family: 'FontAwesome';

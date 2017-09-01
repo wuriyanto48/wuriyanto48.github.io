@@ -1818,3 +1818,5 @@ blockquote {
 .uipasta-credit a:hover {
     color: #333333;
 }
+
+.thumbnail small.text-muted { min-height: 35px; display: inline-block; }

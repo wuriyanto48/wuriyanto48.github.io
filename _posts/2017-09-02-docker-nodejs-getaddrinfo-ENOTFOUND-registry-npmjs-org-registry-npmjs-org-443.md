@@ -3,10 +3,10 @@ layout: post
 comments: true
 title: "How To Fixing docker npm install Error: getaddrinfo ENOTFOUND registry.npmjs.org registry.npmjs.org:443"
 title_header: Blog
-date: 2017-04-30
+date: 2017-09-02
 ---
 
-<h3>Open and Edit NetworkManager.conf file<h3>
+<h3>Open and Edit NetworkManager.conf file</h3>
 
 ```shell
 gedit /etc/NetworkManager/NetworkManager.conf

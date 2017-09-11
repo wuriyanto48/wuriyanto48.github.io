@@ -326,12 +326,12 @@ button {
 
 /* Screen MD */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .about-fixed { width: 242px; }
+    .about-fixed { width: 234px; }
 }
 
 /* Screen LG */
 @media (min-width: 1200px) {
-    .about-fixed { width: 292px; }
+    .about-fixed { width: 276px; }
 }
 
 .my-pic {

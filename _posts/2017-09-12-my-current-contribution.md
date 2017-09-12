@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "My Current Activity on Github"
+title: "My Current Activities on Github"
 title_header: Blog
 date: 2017-09-12
 ---

@@ -639,6 +639,7 @@ div.blog-post {
 }
 
 .blog-post .post-title h2 {
+    color: #333333;
     font-size: 20px;
     line-height: 35px;
     font-weight: 600;
@@ -827,6 +828,19 @@ blockquote {
 #endpage-box {
     display: none !important;
 }
+
+/*Skills*/
+#skillswrap {
+	background: #2c3e50;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	color: white;
+}
+
+#skillswrap h5{
+	color: white;
+}
+/*skills end*/
 
 
 

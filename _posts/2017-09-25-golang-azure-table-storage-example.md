@@ -29,8 +29,20 @@ func main(){
 		}
 		tableService := c.GetTableService()
 		table := tableService.GetTableReference(EXAMPLE_TABLE_NAME)
-		entity := table.GetEntityReference("PartitionKey", "RowKey")
-		fmt.Println(entity)
+
+		entity := table.GetEntityReference("partition_key_name", "some_row_key")
+
+		err := entity.Get(30, storage.FullMetadata, &storage.GetEntityOptions{
+		Select: []string{
+			"some_row_property",
+		}})
+
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		result := entity.Properties["some_row_property"].(string)
+		fmt.Println(result)
 }
 
 func newClient(name, key string) (*storage.Client, error) {

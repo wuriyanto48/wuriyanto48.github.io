@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "S39WRXUKHC.com.telkom.tdsam",
+                "paths": [ "*"]
+            }
+        ]
+    }
+}

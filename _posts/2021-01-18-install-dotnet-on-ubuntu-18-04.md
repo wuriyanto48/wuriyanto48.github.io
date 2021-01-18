@@ -1,6 +1,12 @@
-## Install Dotnet on Ubuntu 18.04
+---
+layout: post
+comments: true
+title: "Install Dotnet on Ubuntu 18.04"
+title_header: Blog
+date: 2021-01-18
+---
 
-### Install Dotnet SDK and Dotnet runtime
+<h3>Install Dotnet SDK and Dotnet runtime</h3>
 
 install SDK
 ```shell

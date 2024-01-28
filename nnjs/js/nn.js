@@ -106,7 +106,7 @@ class NNetwork {
             
         }
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             let ws = [];
             for (let j = 0; j < 20; j++) {
                 let w = Math.random();
@@ -128,7 +128,7 @@ class NNetwork {
             this.bs2.push(b);
         }
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             let b = Math.random();;
             this.bs3.push(b);
         }

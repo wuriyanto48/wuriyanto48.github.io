@@ -10,7 +10,7 @@ var host = window.location.protocol + "//" + window.location.host;
 
 // instantiate Network
 const n = new NNetwork(0, 0);
-n.loadModel(host+'/js/model.json');
+n.loadModel(host+'/nnjs/js/model.json');
 
 var drag = false;
 var colorDrawDefault = "white";

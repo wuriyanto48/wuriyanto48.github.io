@@ -10,7 +10,7 @@ var host = window.location.protocol + "//" + window.location.host;
 
 // instantiate Network
 const n = new NNetwork(0, 0);
-n.loadModel(host+'/nnjs/js/model.json');
+n.loadModel(host+'/js/model.json');
 
 var drag = false;
 var colorDrawDefault = "white";
@@ -63,6 +63,38 @@ canvas.addEventListener('mousemove', function(event) {
         drawCircle(x, y);
     }
 });
+
+// mobile device
+canvas.addEventListener('touchstart', function(event) {
+    if (event.target == canvas) {
+        event.preventDefault();
+    }
+
+    drag = true;
+}, false);
+
+canvas.addEventListener('touchend', function(event) {
+    if (event.target == canvas) {
+        event.preventDefault();
+    }
+
+    drag = false;
+}, false);
+
+canvas.addEventListener('touchmove', function(event) {
+    if (event.target == canvas) {
+        event.preventDefault();
+    }
+
+    var touch = event.touches[0];
+
+    var x = touch.clientX;
+    var y = touch.clientY;
+
+    if (drag) {
+        drawCircle(x, y);
+    }
+}, false);
 
 function predict() {
     ctxTemp.drawImage(canvas, 0, 0, tempCanvas.width, tempCanvas.height);

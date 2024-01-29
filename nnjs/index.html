@@ -21,7 +21,53 @@
       <p id="resultAcc" class="fs-4"></p>
 
       <span class="border-end"></span>
-      <p class="fs-4">Disclaimer: Model di latih dengan 2 hidden layer dan dengan minimum parameter, sehingga model ini belum sepenuhnya akurat. Saat ini model hanya bisa memprediksi angka 1-6.</p>
+      <p class="fs-4"></p>
+  </div>
+  <div class="blockcode">
+    <footer class="page-footer shadow">
+      <div class="d-flex flex-column mx-auto py-5" style="width: 80%">
+        <div class="d-flex flex-wrap justify-content-between">
+          <div>
+            <a href="#" class="d-flex align-items-center p-0 text-dark">
+              <span class="ms-3 h5 font-weight-bold">Disclaimer</span>
+            </a>
+            <p class="my-3" style="width: 250px">
+              Model di latih dengan 2 hidden layer dan dengan minimum parameter, sehingga model ini belum sepenuhnya akurat. Saat ini model hanya bisa memprediksi angka 1 - 6.
+            </p>
+            <span class="mt-4">
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fa fa-facebook"></i>
+              </button>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fa fa-twitter"></i>
+              </button>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fa fa-instagram"></i>
+              </button>
+            </span>
+          </div>
+          <div>
+            <p class="h5 mb-4" style="font-weight: 600">Get in touch</p>
+            <ul class="p-0" style="list-style: none; cursor: pointer">
+              <li class="my-2">
+                <a class="text-dark" href="http://wuriyan.to" target="_blank">wuriyan.to</a>
+              </li>
+              <li class="my-2">
+                <a class="text-dark" href="https://github.com/wuriyanto48" target="_blank">Wury's Github</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <small class="text-center mt-5">&copy; Wuriyanto, <span class="year">2023</span>.</small>
+
+        <script>
+          const footerYear = document.querySelectorAll(".year");
+          footerYear.forEach(copyright => {
+            copyright.innerHTML = new Date().getFullYear();
+          });
+        </script>
+      </div>
+    </footer>
   </div>
   <script src="./js/nn.js"></script>
   <script src="./js/index.js"></script>

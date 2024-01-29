@@ -10,7 +10,7 @@ var host = window.location.protocol + "//" + window.location.host;
 
 // instantiate Network
 const n = new NNetwork(0, 0);
-n.loadModel(host+'/nnjs/js/model.json');
+n.loadModel(host+'/js/model.json');
 
 var drag = false;
 var colorDrawDefault = "white";
@@ -114,7 +114,7 @@ function predict() {
     console.log(r);
     console.log(argmax(r));
 
-    var labels = ['nol', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam'];
+    var labels = ['nol', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh'];
 
     document.getElementById('textResult').innerText = labels[argmax(r)];
     document.getElementById('resultAcc').innerText = 'akurasi: ' + (r[argmax(r)].h * 100).toFixed(2) + '%';

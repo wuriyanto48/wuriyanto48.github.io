@@ -114,7 +114,7 @@ function predict() {
     console.log(r);
     console.log(argmax(r));
 
-    var labels = ['nol', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh'];
+    var labels = ['Nol', 'Satu', 'Dua', 'Tiga', 'Empat', 'Lima', 'Enam', 'Tujuh', 'Delapan', 'Sembilan'];
 
     document.getElementById('textResult').innerText = labels[argmax(r)];
     document.getElementById('resultAcc').innerText = 'akurasi: ' + (r[argmax(r)].h * 100).toFixed(2) + '%';

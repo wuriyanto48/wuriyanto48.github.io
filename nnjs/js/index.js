@@ -110,7 +110,8 @@ function predict() {
         j++;
     }
 
-    var r = n.forward(Array.from(color));
+    var layers = n.forward(Array.from(color));
+    var r = layers[layers.length-1];
     console.log(r);
     console.log(argmax(r));
 

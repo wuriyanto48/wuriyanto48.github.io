@@ -228,14 +228,14 @@ class NNetwork {
                         let x = xTrain[j];
 
                         let updatedWeight = 0;
-                        for (let k = derivativeCosts.length-1; k >= 0; k--) {
-                            let zh3Temp = zh3[k];
-                            let dc = derivativeCosts[k];
+                        for (let m = zh2.length - 1; m >= 0; m--) {
+                            // console.log(k, ' ', m, ' ', i, ' ', j);
+                            let zh2Temp = zh2[m];
+
+                            for (let k = zh3.length-1; k >= 0; k--) {
+                                let zh3Temp = zh3[k];
+                                let dc = derivativeCosts[k];
                             
-                            for (let m = zh2.length - 1; m >= 0; m--) {
-                                // console.log(k, ' ', m, ' ', i, ' ', j);
-                                let zh2Temp = zh2[m];
-                                
                                 updatedWeight += dc * 
                                     derivativeSigmoid(zh3Temp.z) * 
                                     this.ws3[k][m] * 

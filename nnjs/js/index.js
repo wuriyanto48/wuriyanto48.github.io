@@ -6,6 +6,12 @@ var ctx = canvas.getContext("2d");
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+// draw inner box
+ctx.beginPath();
+ctx.strokeStyle = "red";
+ctx.rect(100, 60, 200, 280);
+ctx.stroke();
+
 var host = window.location.protocol + "//" + window.location.host;
 
 // instantiate Network
@@ -136,4 +142,10 @@ buttonClear.addEventListener('click', function(event) {
 
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // draw inner box
+    ctx.beginPath();
+    ctx.strokeStyle = "red";
+    ctx.rect(100, 60, 200, 280);
+    ctx.stroke();
 });

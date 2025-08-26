@@ -1,38 +1,92 @@
 <input type="file" id="uploadImage" accept="image/*" />
 <br><br>
-<img id="inputImage" style="max-width:400px; display:none;" />
+<div style="position: relative; display: inline-block;">
+  <img id="inputImage" style="max-width:400px; display:none;" />
+  <canvas id="canvas" style="position:absolute; top:0; left:0;"></canvas>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0"></script>
 <script>
 let model;
+const labels = [ // COCO classes https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco.yaml
+  "person","bicycle","car","motorbike","aeroplane","bus","train","truck","boat","traffic light",
+  "fire hydrant","stop sign","parking meter","bench","bird","cat","dog","horse","sheep","cow",
+  "elephant","bear","zebra","giraffe","backpack","umbrella","handbag","tie","suitcase","frisbee",
+  "skis","snowboard","sports ball","kite","baseball bat","baseball glove","skateboard","surfboard","tennis racket","bottle",
+  "wine glass","cup","fork","knife","spoon","bowl","banana","apple","sandwich","orange",
+  "broccoli","carrot","hot dog","pizza","donut","cake","chair","sofa","pottedplant","bed",
+  "diningtable","toilet","tvmonitor","laptop","mouse","remote","keyboard","cell phone","microwave","oven",
+  "toaster","sink","refrigerator","book","clock","vase","scissors","teddy bear","hair drier","toothbrush"
+];
 
-// load model once
 (async () => {
   const host = window.location.protocol + "//" + window.location.host;
   model = await tf.loadGraphModel(host + "/yolo8-tfjs/model.json");
   console.log("Model loaded ✅");
 })();
 
-// listen when user upload image
 document.getElementById("uploadImage").addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
-  // render image to <img>
   const imgEl = document.getElementById("inputImage");
   imgEl.src = URL.createObjectURL(file);
   imgEl.style.display = "block";
 
   imgEl.onload = async () => {
-    // preprocess
+    const canvas = document.getElementById("canvas");
+    canvas.width = imgEl.width;
+    canvas.height = imgEl.height;
+    const ctx = canvas.getContext("2d");
+
     const input = tf.browser.fromPixels(imgEl)
       .resizeBilinear([640, 640])
       .expandDims(0)
       .div(255.0);
 
-    // inference
-    const preds = await model.executeAsync(input);
-    console.log("Predictions:", preds);
+    const pred = await model.executeAsync(input); // [1,84,8400]
+    const data = pred.arraySync()[0]; // shape [84, 8400]
+
+    const boxes = tf.tensor(data.slice(0,4));  // [4, 8400]
+    const scores = tf.tensor(data.slice(4));  // [80, 8400]
+
+    const scoresT = scores.transpose(); // [8400, 80]
+    const maxScores = scoresT.max(1);   // [8400]
+    const classes = scoresT.argMax(1);  // [8400]
+
+    const boxesT = boxes.transpose();   // [8400, 4]
+
+    // NMS
+    const nms = await tf.image.nonMaxSuppressionAsync(
+      boxesT, maxScores, 20, 0.5, 0.5
+    );
+
+    const indices = await nms.array();
+    const finalBoxes = await boxesT.gather(nms).array();
+    const finalScores = await maxScores.gather(nms).array();
+    const finalClasses = await classes.gather(nms).array();
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.lineWidth = 2;
+    ctx.font = "16px Arial";
+
+    finalBoxes.forEach((box,i)=>{
+      const [ymin,xmin,ymax,xmax] = box;
+      const x = xmin * imgEl.width;
+      const y = ymin * imgEl.height;
+      const w = (xmax - xmin) * imgEl.width;
+      const h = (ymax - ymin) * imgEl.height;
+
+      ctx.strokeStyle = "red";
+      ctx.strokeRect(x,y,w,h);
+
+      const label = labels[finalClasses[i]] || "obj";
+      const score = (finalScores[i]*100).toFixed(1);
+      ctx.fillStyle = "red";
+      ctx.fillText(`${label} ${score}%`, x, y>10? y-5:10);
+    });
+
+    tf.dispose([pred, boxes, scores, scoresT, maxScores, classes, boxesT, nms]);
   };
 });
 </script>

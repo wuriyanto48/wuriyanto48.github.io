@@ -76,11 +76,16 @@ document.getElementById("uploadImage").addEventListener("change", async (e) => {
     ctx.font = "16px Arial";
 
     finalBoxes.forEach((box,i)=>{
-      const [cx, cy, w, h] = box; // YOLOv8 output
-      const xmin = (cx - w/2) * imgEl.width;
-      const ymin = (cy - h/2) * imgEl.height;
-      const xmax = (cx + w/2) * imgEl.width;
-      const ymax = (cy + h/2) * imgEl.height;
+      const [cx, cy, w, h] = box; // YOLOv8: [center_x, center_y, width, height], normalized 0–1 (relative to 640x640)
+    
+      // scale ke ukuran asli gambar
+      const xScale = imgEl.width / 640;
+      const yScale = imgEl.height / 640;
+    
+      const xmin = (cx - w/2) * xScale;
+      const ymin = (cy - h/2) * yScale;
+      const xmax = (cx + w/2) * xScale;
+      const ymax = (cy + h/2) * yScale;
     
       const bw = xmax - xmin;
       const bh = ymax - ymin;
@@ -97,7 +102,7 @@ document.getElementById("uploadImage").addEventListener("change", async (e) => {
       ctx.fillText(`${label} ${score}%`, xmin, ymin > 10 ? ymin - 5 : 10);
     });
 
-
+    
     tf.dispose([pred, boxes, scores, scoresT, maxScores, classes, boxesT, nms]);
   };
 });

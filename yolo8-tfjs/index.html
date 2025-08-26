@@ -45,7 +45,9 @@ document.getElementById("uploadImage").addEventListener("change", async (e) => {
       .div(255.0);
 
     const pred = await model.executeAsync(input); // [1,84,8400]
+    console.log("Predictions:", pred);
     const data = pred.arraySync()[0]; // shape [84, 8400]
+    console.log("Data:", data);
 
     const boxes = tf.tensor(data.slice(0,4));  // [4, 8400]
     const scores = tf.tensor(data.slice(4));  // [80, 8400]

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COCO-SSD Webcam Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  </head>
+  <body>
+    <h1>COCO-SSD Webcam Test</h1>
+
+    <!-- video live -->
+    <video id="webcam" autoplay playsinline width="640" height="480"></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <pre id="result"></pre>
+
+    <script>
+      let model;
+      const video = document.getElementById("webcam");
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      async function loadModel() {
+        model = await cocoSsd.load();
+        console.log("COCO-SSD model loaded");
+        startWebcam();
+      }
+
+      async function startWebcam() {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+        });
+        video.srcObject = stream;
+
+        video.onloadedmetadata = () => {
+          video.play();
+          detectFrame();
+        };
+      }
+
+      async function detectFrame() {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // object detection
+        const predictions = await model.detect(video);
+
+        // draw bounding boxes
+        predictions.forEach((pred) => {
+          ctx.beginPath();
+          ctx.rect(...pred.bbox);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = "red";
+          ctx.fillStyle = "red";
+          ctx.stroke();
+          ctx.fillText(
+            `${pred.class} (${Math.round(pred.score * 100)}%)`,
+            pred.bbox[0],
+            pred.bbox[1] > 10 ? pred.bbox[1] - 5 : 10
+          );
+        });
+
+        document.getElementById("result").textContent = JSON.stringify(
+          predictions,
+          null,
+          2
+        );
+
+        requestAnimationFrame(detectFrame); // loop
+      }
+
+      loadModel();
+    </script>
+  </body>
+</html>

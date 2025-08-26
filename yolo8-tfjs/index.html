@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0"></script>
+<script>
+async function runYOLO() {
+  // load model
+  var host = window.location.protocol + "//" + window.location.host;
+  const model = await tf.loadGraphModel(host + "/yolo8-tfjs/model.json");
+
+  // ambil gambar
+  const img = document.getElementById("inputImage");
+  const input = tf.browser.fromPixels(img)
+    .resizeBilinear([640, 640])
+    .expandDims(0)
+    .div(255.0);
+
+  // jalankan inference
+  const preds = await model.executeAsync(input);
+  console.log(preds);
+}
+runYOLO();
+</script>

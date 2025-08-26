@@ -68,6 +68,9 @@ document.getElementById("uploadImage").addEventListener("change", async (e) => {
     const finalScores = await maxScores.gather(nms).array();
     const finalClasses = await classes.gather(nms).array();
 
+    console.log("finalClasses:", finalClasses);
+    console.log("finalScores:", finalScores);
+
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.lineWidth = 2;
     ctx.font = "16px Arial";

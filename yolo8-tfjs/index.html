@@ -1,20 +1,38 @@
+<input type="file" id="uploadImage" accept="image/*" />
+<br><br>
+<img id="inputImage" style="max-width:400px; display:none;" />
+
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0"></script>
 <script>
-async function runYOLO() {
-  // load model
-  var host = window.location.protocol + "//" + window.location.host;
-  const model = await tf.loadGraphModel(host + "/yolo8-tfjs/model.json");
+let model;
 
-  // ambil gambar
-  const img = document.getElementById("inputImage");
-  const input = tf.browser.fromPixels(img)
-    .resizeBilinear([640, 640])
-    .expandDims(0)
-    .div(255.0);
+// load model once
+(async () => {
+  const host = window.location.protocol + "//" + window.location.host;
+  model = await tf.loadGraphModel(host + "/yolo8-tfjs/model.json");
+  console.log("Model loaded ✅");
+})();
 
-  // jalankan inference
-  const preds = await model.executeAsync(input);
-  console.log(preds);
-}
-runYOLO();
+// listen when user upload image
+document.getElementById("uploadImage").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  // render image to <img>
+  const imgEl = document.getElementById("inputImage");
+  imgEl.src = URL.createObjectURL(file);
+  imgEl.style.display = "block";
+
+  imgEl.onload = async () => {
+    // preprocess
+    const input = tf.browser.fromPixels(imgEl)
+      .resizeBilinear([640, 640])
+      .expandDims(0)
+      .div(255.0);
+
+    // inference
+    const preds = await model.executeAsync(input);
+    console.log("Predictions:", preds);
+  };
+});
 </script>

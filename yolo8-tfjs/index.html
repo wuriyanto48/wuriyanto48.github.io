@@ -76,20 +76,27 @@ document.getElementById("uploadImage").addEventListener("change", async (e) => {
     ctx.font = "16px Arial";
 
     finalBoxes.forEach((box,i)=>{
-      const [ymin,xmin,ymax,xmax] = box;
-      const x = xmin * imgEl.width;
-      const y = ymin * imgEl.height;
-      const w = (xmax - xmin) * imgEl.width;
-      const h = (ymax - ymin) * imgEl.height;
-
+      const [cx, cy, w, h] = box; // YOLOv8 output
+      const xmin = (cx - w/2) * imgEl.width;
+      const ymin = (cy - h/2) * imgEl.height;
+      const xmax = (cx + w/2) * imgEl.width;
+      const ymax = (cy + h/2) * imgEl.height;
+    
+      const bw = xmax - xmin;
+      const bh = ymax - ymin;
+    
       ctx.strokeStyle = "red";
-      ctx.strokeRect(x,y,w,h);
-
+      ctx.lineWidth = 2;
+      ctx.strokeRect(xmin, ymin, bw, bh);
+    
       const label = labels[finalClasses[i]] || "obj";
       const score = (finalScores[i]*100).toFixed(1);
+    
       ctx.fillStyle = "red";
-      ctx.fillText(`${label} ${score}%`, x, y>10? y-5:10);
+      ctx.font = "16px Arial";
+      ctx.fillText(`${label} ${score}%`, xmin, ymin > 10 ? ymin - 5 : 10);
     });
+
 
     tf.dispose([pred, boxes, scores, scoresT, maxScores, classes, boxesT, nms]);
   };

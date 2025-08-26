@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COCO-SSD Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  </head>
+  <body>
+    <h1>COCO-SSD Test</h1>
+    <input type="file" id="upload" accept="image/*">
+    <br><br>
+    <canvas id="canvas" width="500"></canvas>
+    <pre id="result"></pre>
+
+    <script>
+      let model;
+
+      async function loadModel() {
+        model = await cocoSsd.load();
+        console.log("COCO-SSD model loaded");
+      }
+
+      document.getElementById("upload").addEventListener("change", async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const img = new Image();
+        img.src = URL.createObjectURL(file);
+
+        img.onload = async () => {
+          const canvas = document.getElementById("canvas");
+          const ctx = canvas.getContext("2d");
+
+          // resize canvas and follow the picture's size
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+
+          // detect object
+          const predictions = await model.detect(img);
+
+          // draw bounding box
+          predictions.forEach(pred => {
+            ctx.beginPath();
+            ctx.rect(...pred.bbox);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "red";
+            ctx.fillStyle = "red";
+            ctx.stroke();
+            ctx.fillText(
+              `${pred.class} (${Math.round(pred.score * 100)}%)`,
+              pred.bbox[0],
+              pred.bbox[1] > 10 ? pred.bbox[1] - 5 : 10
+            );
+          });
+
+          document.getElementById("result").textContent =
+            JSON.stringify(predictions, null, 2);
+        };
+      });
+
+      loadModel();
+    </script>
+  </body>
+</html>

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wury&#39;s Gallery</title>
-    <link>https://gallery.wuriyan.to/</link>
+    <link>https://wuriyan.to/gallery/</link>
     <description>Recent content on Wury&#39;s Gallery</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2020 14:06:11 -0600</lastBuildDate><atom:link href="https://gallery.wuriyan.to/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Mar 2020 14:06:11 -0600</lastBuildDate><atom:link href="https://wuriyan.to/gallery/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
